@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bank App</title>
+
+<style>
+body {
+    font-family: Arial, sans-serif;
+    background: #eef2f7;
+    margin: 0;
+}
+
+.container {
+    max-width: 700px;
+    margin: 20px auto;
+    padding: 10px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+
+.card {
+    background: white;
+    padding: 12px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+h3 {
+    font-size: 14px;
+    margin: 5px 0 8px;
+}
+
+input {
+    width: 100%;
+    padding: 6px;
+    margin-bottom: 6px;
+    font-size: 12px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    width: 100%;
+    padding: 6px;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    background: #007bff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0056b3;
+}
+
+.link-btn {
+    display: block;
+    text-align: center;
+    padding: 6px;
+    font-size: 12px;
+    background: #28a745;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.link-btn:hover {
+    background: #1e7e34;
+}
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<h1> Bank System</h1>
+
+<div class="grid">
+
+<div class="card">
+<h3>Open a New Account </h3>
+<form action="/Create" method="post">
+<input name="name" placeholder="Name">
+<input name="user_id" placeholder="User ID">
+<button>open a new account</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Check Your Balance</h3>
+<form action="/Balance" method="post">
+<input name="user_id" placeholder="User ID">
+<button>Check</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Deposit</h3>
+<form action="/deposit" method="post">
+<input name="user_id" placeholder="User ID">
+<input name="amount" placeholder="Amount">
+<button>Add</button>
+</form>
+</div>
+
+<div class="card">
+<h3>Summary</h3>
+<form action="/summary" method="post">
+<input name="user_id" placeholder="User ID">
+<button>View</button>
+</form>
+</div>
+
+<div class="card" style="grid-column: span 2;">
+<h3>All Accounts</h3>
+<a href="/all" class="link-btn">View All</a>
+</div>
+
+</div>
+
+</div>
+</body>
+</html>
